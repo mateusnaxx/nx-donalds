@@ -1,7 +1,9 @@
+"use client"
+
 import { OrderStatus, Prisma } from "@prisma/client";
 import { ChevronLeftIcon, ScrollTextIcon } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+import { useParams, useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -42,12 +44,13 @@ const getStatusLabel = (status: OrderStatus) => {
 }
 
 const OrderList = ({orders}: OrderListProps) => {
+    const {slug} = useParams<{slug: string}>()
+    const router = useRouter()
+    const handleBackClick = () => router.push(`/${slug}`)
     return ( 
         <div className="space-y-6 p-6">
-            <Button className="rounded-full" size="icon" variant="secondary">
-                <Link href="/nx-donalds">
-                    <ChevronLeftIcon/>
-                </Link>
+            <Button onClick={handleBackClick} className="rounded-full" size="icon" variant="secondary">
+                <ChevronLeftIcon/>
             </Button>
 
             <div className="flex items-center gap-3">
