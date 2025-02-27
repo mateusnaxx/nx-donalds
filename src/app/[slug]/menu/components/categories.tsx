@@ -10,8 +10,8 @@ import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { formatCurrency } from "@/helpers/format-currency";
 
 import { CartContext } from "../contexts/cart";
-import Products from "./products";
 import CartSheet from "./cart-sheet";
+import Products from "./products";
 
 interface RestaurantCategoriesProps {
     restaurant: Prisma.RestaurantGetPayload<{
