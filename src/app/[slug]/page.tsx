@@ -20,7 +20,7 @@ const RestaurantPage = async ({ params }: RestaurantPageProps) => {
     }
 
     return (
-        <div className="flex h-screen flex-col items-center justify-center px-6 pt-24">
+        <div className="flex h-screen flex-col items-center justify-center px-6">
             {/* Logo e titulo */}
             <div className="flex flex-col items-center gap-2">
                 <Image
@@ -55,6 +55,9 @@ const RestaurantPage = async ({ params }: RestaurantPageProps) => {
                     imageUrl="/takeaway.png"
                 />
             </div>
+            <footer className=" fixed bottom-3 mt-10 text-gray-600 text-sm">
+                © {new Date().getFullYear()} Powered by NAXX
+            </footer>
         </div>
     );
 };
