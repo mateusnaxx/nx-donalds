@@ -28,13 +28,6 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="pt-BR">
-            {/* {<head>
-                <link
-                    rel="icon"
-                    href="/favicon.ico"
-                    type="image/png"
-                />
-            </head>} */}
             <body>
                 <div className={`${poppins.className} antialiased`}>
                     <CartProvider>{children}</CartProvider>

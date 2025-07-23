@@ -20,13 +20,13 @@ const CartSheet = () => {
     const { isOpen, toggleCart, products, total } = useContext(CartContext)
     return (
         <Sheet open={isOpen} onOpenChange={toggleCart}>
-            <SheetContent className="w-[80%]">
+            <SheetContent className="w-[80%] px-4">
                 <SheetHeader>
                     <SheetTitle className="text-left">Sacola</SheetTitle>
                 </SheetHeader>
 
                 <div className="flex h-full flex-col py-5">
-                    <div className="flex-auto">
+                    <div className="flex-auto space-y-4">
                         {products.map((product) => (
                             <CartProductItem
                                 key={product.id}
