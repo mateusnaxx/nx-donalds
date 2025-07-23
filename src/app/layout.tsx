@@ -16,7 +16,8 @@ export const metadata: Metadata = {
     title: 'NX Donalds',
     description: 'Powered by NAXX',
     icons: {
-        icon: 'https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQvcNP9rHlEJu1vCY5kLqzjf29HKaeN78Z6pRy',
+        /* icon: 'https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQvcNP9rHlEJu1vCY5kLqzjf29HKaeN78Z6pRy', */
+        icon: '/favicon.ico',
     },
 }
 
@@ -27,16 +28,19 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="pt-BR">
-            <head>
+            {/* {<head>
                 <link
                     rel="icon"
-                    href="https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQvcNP9rHlEJu1vCY5kLqzjf29HKaeN78Z6pRy"
+                    href="/favicon.ico"
+                    type="image/png"
                 />
-            </head>
-            <body className={`${poppins.className} antialiased`}>
-                <CartProvider>{children}</CartProvider>
+            </head>} */}
+            <body>
+                <div className={`${poppins.className} antialiased`}>
+                    <CartProvider>{children}</CartProvider>
 
-                <Toaster />
+                    <Toaster />
+                </div>
             </body>
         </html>
     )
