@@ -97,7 +97,13 @@ export const CartProvider = ({children}: {children: ReactNode}) => {
     }
 
     const removeProduct = (productId: string) => {
-        setProducts(prevProducts => prevProducts.filter(prevProduct => prevProduct.id != productId))
+        setProducts(prevProducts => {
+            const next = prevProducts.filter(prevProduct => prevProduct.id != productId)
+            if (next.length === 0) {
+                setIsOpen(false)
+            }
+            return next
+        })
     }
 
     return (
