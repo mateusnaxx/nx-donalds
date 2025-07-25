@@ -76,19 +76,18 @@ const FinishOrderDialog = ({ open, onOpenChange }: FinishOrderDialogProps) => {
                 'consumptionMethod',
             ) as consumptionMethod
 
-            startTransition( async() => {
+            startTransition(async () => {
                 await CreateOrder({
                     consumptionMethod,
                     customerCpf: data.cpf,
                     customerName: data.name,
                     products,
-                    slug,
+                    restaurantId: slug,
                 })
 
                 onOpenChange(false)
-                toast.success("Pedido finalizado com sucesso!")
+                toast.success('Pedido finalizado com sucesso!')
             })
-            
         } catch (error) {
             console.error(error)
         }
@@ -152,9 +151,11 @@ const FinishOrderDialog = ({ open, onOpenChange }: FinishOrderDialogProps) => {
                                     type="submit"
                                     variant="destructive"
                                     className="rounded-full"
-                                    disabled= {isPeding}
+                                    disabled={isPeding}
                                 >
-                                    {isPeding && <Loader2Icon className='animate-spin' /> }
+                                    {isPeding && (
+                                        <Loader2Icon className="animate-spin" />
+                                    )}
                                     Finalizar
                                 </Button>
                                 <DrawerClose asChild>
